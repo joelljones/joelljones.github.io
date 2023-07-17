@@ -1,6 +1,5 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import { Icon } from "astro-icon";
 import astronautImage from "~/assets/astronaut.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
@@ -20,14 +19,19 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     <h2
       class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-      <Icon name="logomark" class="h-24 text-white md:h-32" />
+      <!-- <Icon name="logomark" class="h-24 text-white md:h-32" /> -->
       <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
+        class="gradient-text pb-1 pr-1 text-center font-extrabold tracking-tighter text-8xl"
       >
-        Build fast
+        <!-- Build fast
         <br /> websites,
-        <br /> faster.
+        <br /> faster. -->
+        Joell Jones
+        <!-- <br /> -->
+        <p class="text-5xl">Software Engineer</p>
       </div>
+      <!-- TODO: add skill list -->
+      <!-- TODO: add contact list -->
     </h2>
     <div
       id="astronaut"
