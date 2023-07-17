@@ -4,6 +4,7 @@ import astronautImage from "~/assets/astronaut.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 // import GitHubCorner from "./github-corner.astro";
+import ContactLinks from "~/components/contact-links.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -27,11 +28,12 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
         <br /> websites,
         <br /> faster. -->
         Joell Jones
-        <!-- <br /> -->
         <p class="text-5xl">Software Engineer</p>
       </div>
-      <!-- TODO: add skill list -->
-      <!-- TODO: add contact list -->
+      <div class="flex flex-col items-center justify-center text-white">
+        <p>JavaScript, React, Node.js, Express, MongoDB</p>
+        <ContactLinks />
+      </div>
     </h2>
     <div
       id="astronaut"

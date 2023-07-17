@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon";
+
+const links = [
+  {
+    url: "https://github.com/joelljones",
+    description: "github.com",
+    icon: "fa-brands:github",
+  },
+  {
+    url: "https://codepen.io/joelljones",
+    description: "codepen.io",
+    icon: "fa-brands:codepen",
+  },
+  {
+    url: "https://linkedin.com/in/joelljones",
+    description: "linkedin.com",
+    icon: "fa-brands:linkedin",
+  },
+  {
+    url: "https://rebrand.ly/4455e",
+    description: "email",
+    icon: "fa:envelope",
+  },
+];
+---
+
+<ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+  {
+    links.map((link) => (
+      <li>
+        <a
+          class="flex h-16 w-16 items-center justify-center p-4"
+          target="_blank"
+          href={link.url}
+          target={"blank"}
+        >
+          <span class="sr-only">{link.description}</span>
+          <Icon class="h-full" name={link.icon} />
+        </a>
+      </li>
+    ))
+  }
+</ul>
