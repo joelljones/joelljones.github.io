@@ -10,6 +10,12 @@ module.exports = {
       colors: {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
+        pink: {
+          950: "#DB3EB1",
+        },
+        blue: {
+          950: "#41B6E6",
+        },
       },
       textColor: {
         default: "var(--color-text)",
