@@ -13,7 +13,7 @@ const widths = [450, 800];
 const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
-<a class="group aspect-video hover:!text-default" href={site.data.url}>
+<div class="group aspect-video hover:!text-default">
   <figure class="relative h-full w-full overflow-hidden">
     <Picture
       class="h-full w-full bg-cover object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20"
@@ -21,7 +21,7 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
       widths={widths}
       sizes={sizes}
       aspectRatio="16:9"
-      alt={`A screenshot of ${site.data.url}`}
+      alt={`A screenshot of ${site.data.live}`}
     />
     <figcaption class="absolute inset-0">
       <div
@@ -30,8 +30,23 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
         <h3 class="text-center font-extrabold uppercase text-xl">
           {site.data.title}
         </h3>
-        <p class="border border-current px-4 py-2">{site.data.url}</p>
+        <div class="flex gap-2">
+          <a
+            target="_blank"
+            href={site.data.live}
+            class="border border-current px-4 py-2"
+          >
+            Live
+          </a>
+          <a
+            target="_blank"
+            href={site.data.code}
+            class="border border-current px-4 py-2"
+          >
+            Code
+          </a>
+        </div>
       </div>
     </figcaption>
   </figure>
-</a>
+</div>

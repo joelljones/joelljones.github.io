@@ -1,10 +1,14 @@
-# Astro Landing Page
+# Portfolio
 
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+> An Astro + Tailwind CSS portfolio page.
 
-> An Astro + Tailwind CSS example/template for landing pages.
+![screenshot](src/assets/screenshot.png)
 
-![Screenshots of Astro Landing Page](screenshots.jpg)
+**Link to portfolio:** https://joelljones.github.io
+
+## 🚀 How It's Made:
+
+**Tech used:** [Astro](https://astro.build/), HTML, [Tailwind CSS](https://tailwindcss.com/), JavaScript
 
 ## Features
 
@@ -18,7 +22,7 @@
 - 🔗 Open Graph tags for social media sharing
 - 💅 [Prettier](https://prettier.io/) setup for both [Astro](https://github.com/withastro/prettier-plugin-astro) and [Tailwind](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 
-## Commands
+## 🧞 Commands
 
 | Command                | Action                                            |
 | :--------------------- | :------------------------------------------------ |
@@ -37,4 +41,3 @@
   - source: https://github.com/withastro/astro-og-image; note: this repo is not available anymore
 - moon image
   - source: https://unsplash.com/@nasa
-- other than that, a lot of material (showcase data, copy) was taken from official Astro sources, in particular https://astro.build/blog/introducing-astro/ and https://github.com/withastro/astro.build
