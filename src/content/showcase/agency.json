@@ -1,7 +1,7 @@
 {
   "title": "Agency",
   "image": "/src/content/showcase/_images/agency.png",
-  "live": "https://agency-dev-studio.netlify.app/",
+  "live": "https://agency-dev-studio.netlify.app",
   "code": "https://github.com/joelljones/agency",
-  "featured": 8
+  "featured": 5
 }

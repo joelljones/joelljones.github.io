@@ -1,7 +1,7 @@
 {
   "title": "Jones CLNC",
   "image": "/src/content/showcase/_images/jones-clnc.png",
-  "live": "https://jonesclnc.com/",
+  "live": "https://jonesclnc.com",
   "code": "https://github.com/joelljones/jones-clnc",
-  "featured": 7
+  "featured": 4
 }

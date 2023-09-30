@@ -38,13 +38,18 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
           >
             Live
           </a>
-          <a
-            target="_blank"
-            href={site.data.code}
-            class="border border-current px-4 py-2"
-          >
-            Code
-          </a>
+          <!-- Jones CLNC is a private repo -->
+          {
+            site.data.code !== "https://github.com/joelljones/jones-clnc" && (
+              <a
+                target="_blank"
+                href={site.data.code}
+                class="border border-current px-4 py-2"
+              >
+                Code
+              </a>
+            )
+          }
         </div>
       </div>
     </figcaption>
