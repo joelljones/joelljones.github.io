@@ -1,7 +1,7 @@
 {
-  "title": "Passport",
-  "image": "/src/content/showcase/_images/passport.png",
-  "live": "https://passport-travel.netlify.app",
-  "code": "https://github.com/joelljones/passport",
+  "title": "Travelers",
+  "image": "/src/content/showcase/_images/travelers.png",
+  "live": "https://travelers-group.netlify.app",
+  "code": "https://github.com/joelljones/travelers",
   "featured": 2
 }
