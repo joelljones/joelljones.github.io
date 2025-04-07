@@ -11,6 +11,126 @@ const { site } = Astro.props;
 const image = await resolveImage(site);
 const widths = [450, 800];
 const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
+const cardId = `project-card-${site.data.title.replace(/\s+/g, '-').toLowerCase()}`;
+---
+
+<div class="group aspect-video hover:!text-default project-card" id={cardId}>
+  <figure class="relative h-full w-full overflow-hidden">
+    <Picture
+      class="h-full w-full bg-cover object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20 card-image"
+      src={image.src}
+      widths={widths}
+      sizes={sizes}
+      aspectRatio="16:9"
+      alt={`A screenshot of ${site.data.live}`}
+    />
+    <figcaption class="absolute inset-0">
+      <div
+        class="flex h-full flex-col items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100 caption-content"
+      >
+        <h3 class="text-center font-extrabold uppercase text-xl">
+          {site.data.title}
+        </h3>
+        <div class="flex gap-2">
+          <a
+            target="_blank"
+            href={site.data.live}
+            class="border border-current px-4 py-2 pointer-events-none card-link"
+          >
+            Live
+          </a>
+          <!-- Jones CLNC is a private repo -->
+          {
+            site.data.code !== "https://github.com/joelljones/jones-clnc" && (
+              <a
+                target="_blank"
+                href={site.data.code}
+                class="border border-current px-4 py-2 pointer-events-none card-link"
+              >
+                Code
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </figcaption>
+  </figure>
+</div>
+
+<script>
+  // Client-side code
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.project-card');
+
+    cards.forEach(card => {
+      let isActive = false;
+      const links = card.querySelectorAll('.card-link');
+
+      card.addEventListener('touchstart', function(e) {
+        if (!isActive) {
+          e.preventDefault();
+          isActive = true;
+
+          card.classList.add('active');
+
+          links.forEach(link => {
+            link.classList.remove('pointer-events-none');
+						link.classList.add('text-secondary');
+          });
+
+          const handleOutsideTouch = function(event: Event) {
+            // Type check for Node before using contains
+            const target = event.target as Node;
+            if (card instanceof Node && !card.contains(target)) {
+              isActive = false;
+              card.classList.remove('active');
+
+              links.forEach(link => {
+                link.classList.add('pointer-events-none');
+              });
+
+              document.removeEventListener('touchstart', handleOutsideTouch);
+            }
+          };
+
+          document.addEventListener('touchstart', handleOutsideTouch);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .project-card.active .caption-content {
+    opacity: 1;
+  }
+
+  .project-card.active .card-image {
+    opacity: 0.2 !important;
+    transform: scale(1.1);
+  }
+
+  /* Desktop hover styles */
+  @media (hover: hover) {
+    .group:hover .card-link {
+      pointer-events: auto !important;
+    }
+  }
+</style>
+
+<!-- ---
+import { Picture } from "@astrojs/image/components";
+import type { CollectionEntry } from "astro:content";
+import { resolveImage } from "~/content/showcase/_resolveImage.js";
+
+export interface Props {
+  site: CollectionEntry<"showcase">;
+}
+
+const { site } = Astro.props;
+const image = await resolveImage(site);
+const widths = [450, 800];
+const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
 <div class="group aspect-video hover:!text-default">
@@ -38,7 +158,7 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
           >
             Live
           </a>
-          <!-- Jones CLNC is a private repo -->
+					{/* Jones CLNC is a private repo */}
           {
             site.data.code !== "https://github.com/joelljones/jones-clnc" && (
               <a
@@ -54,4 +174,4 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
       </div>
     </figcaption>
   </figure>
-</div>
+</div> -->
